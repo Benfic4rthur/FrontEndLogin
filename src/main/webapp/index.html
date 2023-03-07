@@ -1,0 +1,43 @@
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Tela Cadastro</title>
+</head>
+<body>
+	<!-- Mini curso Front-end -->
+	<form action="salvarUsuario" method="post" onsubmit="return validarDados()? true : false">
+		<table style="background: #F0FFF0; margin-left: 40%; margin-top: 10%">
+			<tr>
+				<td><label>Login:</label></td>
+				<td><input type="text" id="login" name="login"></td>
+			</tr>
+			<tr>
+				<td><label>Senha:</label></td>
+				<td><input type="password" id="senha" name="senha"></td>
+			</tr>
+			<tr>
+				<td />
+				<td><input type="submit" value="logar" style="width: 100%;"
+					onclick="validarDados()"></td>
+			</tr>
+		</table>
+	</form>
+	<script type="text/javascript">
+		function validarDados() {
+			var login = document.getElementById("login").value;
+			var senha = document.getElementById("senha").value;
+			if (login == '' && senha == '') {
+				alert('Informe os dados de login do usuário!');
+				return false;
+			} else if (login == '') {
+				alert('Informe o login do usuário!');
+				return false;
+			} else if (senha == '') {
+				alert('Informe a senha do usuário!');
+				return false;
+			}
+			return true;
+		}
+	</script>
+</body>
+</html>
